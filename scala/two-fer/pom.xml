@@ -9,7 +9,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.hsmak</groupId>
-    <artifactId>hello-world</artifactId>
+    <artifactId>two-fer</artifactId>
 
     <name>${project.artifactId}</name>
 
@@ -72,7 +72,7 @@
                     <junitxml>.</junitxml>
                     <filereports>TestSuiteReport.txt</filereports>
                     &lt;!&ndash; Comma separated list of JUnit test class names to execute &ndash;&gt;
-&lt;!&ndash;                    <jUnitClasses>samples.AppTest</jUnitClasses>&ndash;&gt;
+                    <jUnitClasses>samples.AppTest</jUnitClasses>
                 </configuration>-->
                 <executions>
                     <execution>
