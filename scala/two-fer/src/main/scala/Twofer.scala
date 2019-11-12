@@ -2,7 +2,7 @@ object Twofer{
 
   def statement(n: String) = s"One for ${n}, one for me."
 
-  def twofer(name: String): String = if (name.isBlank) statement("you") else statement(name)
+  def twofer(name: String): String = if (name.isEmpty) statement("you") else statement(name)
 
   def twofer(): String = statement("you")
 }
