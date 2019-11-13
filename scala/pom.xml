@@ -9,18 +9,11 @@
     <modules>
         <module>hello-world</module>
         <module>two-fer</module>
+        <module>sum-of-multiples</module>
+        <module>robot-name</module>
     </modules>
 
     <name>${project.artifactId}</name>
-    <description>My wonderfull scala app</description>
-    <inceptionYear>2018</inceptionYear>
-    <licenses>
-        <license>
-            <name>My License</name>
-            <url>http://....</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
