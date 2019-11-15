@@ -12,6 +12,8 @@
         <module>sum-of-multiples</module>
         <module>robot-name</module>
         <module>matching-brackets</module>
+        <module>beer-song</module>
+        <module>leap</module>
     </modules>
 
     <name>${project.artifactId}</name>

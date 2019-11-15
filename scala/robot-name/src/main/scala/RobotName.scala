@@ -15,6 +15,10 @@ object RobotName {
     // ToDo - Perhaps generalize via ControlAbstraction/BehaviorParametrization and utilize default/implicit vals as well?
     def generateName(nL:Int = 2, nD:Int = 3) = LazyList.continually(L).take(nL).concat(LazyList.continually(D).take(nD)).mkString // utilizing LazyLis/Stream
 
+    // another version via Ranges
+    def generateName2(nL:Int = 2, nD:Int = 3) = ((0 until nL).map(l => L).mkString).concat((0 until nD).map(d => D).mkString)
+
+
     def L = String.valueOf(letters(random.nextInt(letters.size)))
 
     def D = String.valueOf(random.nextInt(10))
