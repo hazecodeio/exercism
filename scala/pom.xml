@@ -14,6 +14,8 @@
         <module>matching-brackets</module>
         <module>beer-song</module>
         <module>leap</module>
+        <module>house</module>
+        <module>perfect-numbers</module>
     </modules>
 
     <name>${project.artifactId}</name>
