@@ -16,6 +16,7 @@
         <module>leap</module>
         <module>house</module>
         <module>perfect-numbers</module>
+        <module>accumulate</module>
     </modules>
 
     <name>${project.artifactId}</name>
