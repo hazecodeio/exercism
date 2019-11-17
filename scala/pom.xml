@@ -17,6 +17,7 @@
         <module>house</module>
         <module>perfect-numbers</module>
         <module>accumulate</module>
+        <module>collatz-conjecture</module>
     </modules>
 
     <name>${project.artifactId}</name>
