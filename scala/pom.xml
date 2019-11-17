@@ -18,6 +18,7 @@
         <module>perfect-numbers</module>
         <module>accumulate</module>
         <module>collatz-conjecture</module>
+        <module>flatten-array</module>
     </modules>
 
     <name>${project.artifactId}</name>
