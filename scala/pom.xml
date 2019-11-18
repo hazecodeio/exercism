@@ -19,6 +19,7 @@
         <module>accumulate</module>
         <module>collatz-conjecture</module>
         <module>flatten-array</module>
+        <module>difference-of-squares</module>
     </modules>
 
     <name>${project.artifactId}</name>
