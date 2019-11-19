@@ -22,6 +22,7 @@
         <module>difference-of-squares</module>
         <module>gigasecond</module>
         <module>pangram</module>
+        <module>armstrong-numbers</module>
     </modules>
 
     <name>${project.artifactId}</name>
