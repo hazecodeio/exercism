@@ -20,6 +20,7 @@
         <module>collatz-conjecture</module>
         <module>flatten-array</module>
         <module>difference-of-squares</module>
+        <module>gigasecond</module>
     </modules>
 
     <name>${project.artifactId}</name>
