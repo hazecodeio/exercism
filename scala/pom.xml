@@ -23,6 +23,7 @@
         <module>gigasecond</module>
         <module>pangram</module>
         <module>armstrong-numbers</module>
+        <module>triangle</module>
     </modules>
 
     <name>${project.artifactId}</name>
