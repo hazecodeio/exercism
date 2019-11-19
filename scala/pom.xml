@@ -21,6 +21,7 @@
         <module>flatten-array</module>
         <module>difference-of-squares</module>
         <module>gigasecond</module>
+        <module>pangram</module>
     </modules>
 
     <name>${project.artifactId}</name>
