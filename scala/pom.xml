@@ -24,6 +24,7 @@
         <module>pangram</module>
         <module>armstrong-numbers</module>
         <module>triangle</module>
+        <module>raindrops</module>
     </modules>
 
     <name>${project.artifactId}</name>
