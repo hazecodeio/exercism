@@ -2,7 +2,7 @@
  * The solution is based on:
  *  - Truth Table
  *  - Boolean Algebra
- *  - Logical Expression Simplification
+ *  - Boolean Expression Simplification
  *
  * @param s1
  * @param s2
@@ -49,5 +49,18 @@ case class Triangle(s1: Double, s2: Double, s3: Double) {
     else
       false
 
+  /**
+   * Another version, algebraic way and more succinct
+   */
+  object Algebraic {
 
+    private val setOfSides = Set(s1, s2, s3)
+    private val setSize = setOfSides.size
+
+    val isTriangle = setOfSides.min > 0 && s1 + s2 > s3 && s1 + s3 > s2 && s2 + s3 > s1
+
+    def equilateral = isTriangle && setSize == 1
+    def isosceles = isTriangle && setSize <= 2
+    def scalene = isTriangle && setSize == 3
+  }
 }
