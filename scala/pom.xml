@@ -25,6 +25,7 @@
         <module>armstrong-numbers</module>
         <module>triangle</module>
         <module>raindrops</module>
+        <module>scrabble-score</module>
     </modules>
 
     <name>${project.artifactId}</name>
