@@ -27,6 +27,7 @@
         <module>raindrops</module>
         <module>scrabble-score</module>
         <module>space-age</module>
+        <module>clock</module>
     </modules>
 
     <name>${project.artifactId}</name>
