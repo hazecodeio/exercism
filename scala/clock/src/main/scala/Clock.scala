@@ -3,16 +3,16 @@ case class Clock(hour: Int, minute: Int) {
   // Though normalizing beforehand relives us from overriding equal() but it changes the original values
   //  normalizeClock
 
-  def this(minute: Int) = this(minute / 60, minute % 60)
+  def this(minute: Int) = this(0, minute)
 
   private def normalizeClock = {
     var m = minute
     var h = hour
-    if (m < 0) {
-      h -= 1 - m / 60
+    if (m < 0) { // e.g. (-1 == 59)
+      h -= 1 - m / 60 // -ve minutes technically speaking means less time from the hour(s)
       m = 60 + (m % 60)
     }
-    if (h < 0)
+    if (h < 0)// e.g. (-1 == 23)
       h = 24 + (h % 24)
 
     h = (h + m / 60) % 24 // normalize to 24 hours
