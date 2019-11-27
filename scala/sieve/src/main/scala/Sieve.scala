@@ -1,7 +1,7 @@
 import scala.collection.mutable
 
 /**
- * Functional Approach (mostly)
+ * Functional Approach using foldLeft
  */
 object Sieve {
   /**
@@ -13,10 +13,10 @@ object Sieve {
     (2 to num)
       .foldLeft((mutable.SortedSet[Int](), mutable.SortedSet[Int]())) {
         (acc, i) => // This is complex
-          if(!acc._2.contains(i)){
+          if (!acc._2.contains(i)) {
             acc._1 += i
 
-            (2 to num/2).foldLeft(acc._2){(nonePrimes, j) => nonePrimes += i*j}
+            (2 to num / 2).foldLeft(acc._2) { (nonePrimes, j) => nonePrimes += i * j }
           }
           acc
       }._1.toList
@@ -24,9 +24,21 @@ object Sieve {
 }
 
 /**
- * Imperative Approach
+ * Functional Approach using Stream/LazyList
  */
 object Sieve2 {
+  private def prime(s: LazyList[Int]): LazyList[Int] =
+    LazyList.cons(s.head, prime(s.tail.filter(_ % s.head != 0))) // violating the rule of not using any sort of division
+
+  def primes(n: Int): List[Int] =
+    prime(LazyList.from(2)).takeWhile(_ <= n).toList
+}
+
+
+/**
+ * Imperative Approach
+ */
+object Sieve1 {
 
   val allPrimes = mutable.SortedSet.empty[Int]
   val nonePrimes = mutable.SortedSet.empty[Int]
