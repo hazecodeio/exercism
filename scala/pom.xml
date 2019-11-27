@@ -29,6 +29,7 @@
         <module>space-age</module>
         <module>clock</module>
         <module>isogram</module>
+        <module>sieve</module>
     </modules>
 
     <name>${project.artifactId}</name>
