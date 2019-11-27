@@ -28,6 +28,7 @@
         <module>scrabble-score</module>
         <module>space-age</module>
         <module>clock</module>
+        <module>isogram</module>
     </modules>
 
     <name>${project.artifactId}</name>

@@ -1,5 +1,78 @@
 object SpaceAge {
 
+  import PlanetsToEarth._
+
+  trait BasePlanetPeriod { def basePeriod: Int }
+  final case object EarthPeriod extends BasePlanetPeriod {
+    override def basePeriod: Int = 31557600
+  }
+  object BasePlanetPeriod { implicit val earthPeriod: BasePlanetPeriod = EarthPeriod }
+
+  private def ageOn(planet: Planet, seconds: Double)(implicit basePlanetPeriod: BasePlanetPeriod) =
+    seconds / (planet.orbitalPeriod * basePlanetPeriod.basePeriod)
+
+  val onEarth = ageOn(Earth, _)
+
+  val onMercury = ageOn(Mercury, _)
+
+  val onVenus = ageOn(Venus, _)
+
+  val onMars = ageOn(Mars, _)
+
+  val onJupiter = ageOn(Jupiter, _)
+
+  val onSaturn = ageOn(Saturn, _)
+
+  val onUranus = ageOn(Uranus, _)
+
+  val onNeptune = ageOn(Neptune, _)
+
+
+  sealed trait Planet {
+    val orbitalPeriod: Double
+  }
+  object PlanetsToEarth {
+
+    final case object Mercury extends Planet {
+      override val orbitalPeriod: Double = 0.2408467
+    }
+
+    final case object Venus extends Planet {
+      override val orbitalPeriod: Double = 0.61519726
+    }
+
+    final case object Earth extends Planet {
+      override val orbitalPeriod: Double = 1.0
+    }
+
+    final case object Mars extends Planet {
+      override val orbitalPeriod: Double = 1.8808158
+    }
+
+    final case object Jupiter extends Planet {
+      override val orbitalPeriod: Double = 11.862615
+    }
+
+    final case object Saturn extends Planet {
+      override val orbitalPeriod: Double = 29.447498
+    }
+
+    final case object Uranus extends Planet {
+      override val orbitalPeriod: Double = 84.016846
+    }
+
+    final case object Neptune extends Planet {
+      override val orbitalPeriod: Double = 164.79132
+    }
+
+  }
+
+}
+
+/////////////////////////////////////////////
+
+object SpaceAge3 {
+
   import Planets._
 
   private def ageOn(planet: Planet)(seconds: Double) =
@@ -68,7 +141,7 @@ object SpaceAge {
  * Too granular separation of concerns -> over engineered
  * Stick to KISS principle
  */
-object SpaceAge1 {
+object SpaceAge2 {
 
   import Planets._
 
@@ -166,7 +239,7 @@ import scala.language.dynamics
 /**
  *  Via Scala's Dynamic Programming (not recommended for it renders compiler help useless)
  */
-object SpaceAge2 extends Dynamic { // A Marker trait
+object SpaceAge1 extends Dynamic { // A Marker trait
 
   val SecondsPerEarthYear = 31557600
 
