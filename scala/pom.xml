@@ -31,6 +31,7 @@
         <module>isogram</module>
         <module>sieve</module>
         <module>protein-translation</module>
+        <module>high-scores</module>
     </modules>
 
     <name>${project.artifactId}</name>
