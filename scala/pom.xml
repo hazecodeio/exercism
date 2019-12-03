@@ -30,6 +30,7 @@
         <module>clock</module>
         <module>isogram</module>
         <module>sieve</module>
+        <module>protein-translation</module>
     </modules>
 
     <name>${project.artifactId}</name>
