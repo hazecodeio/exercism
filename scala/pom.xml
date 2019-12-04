@@ -32,6 +32,7 @@
         <module>sieve</module>
         <module>protein-translation</module>
         <module>high-scores</module>
+        <module>darts</module>
     </modules>
 
     <name>${project.artifactId}</name>
