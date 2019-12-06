@@ -33,6 +33,7 @@
         <module>protein-translation</module>
         <module>high-scores</module>
         <module>darts</module>
+        <module>prime-factors</module>
     </modules>
 
     <name>${project.artifactId}</name>
