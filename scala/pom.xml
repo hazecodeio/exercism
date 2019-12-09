@@ -34,6 +34,7 @@
         <module>high-scores</module>
         <module>darts</module>
         <module>prime-factors</module>
+        <module>nth-prime</module>
     </modules>
 
     <name>${project.artifactId}</name>
