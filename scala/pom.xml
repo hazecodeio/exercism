@@ -35,6 +35,7 @@
         <module>darts</module>
         <module>prime-factors</module>
         <module>nth-prime</module>
+        <module>pascals-triangle</module>
     </modules>
 
     <name>${project.artifactId}</name>
