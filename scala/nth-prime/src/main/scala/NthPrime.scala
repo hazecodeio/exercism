@@ -1,5 +1,5 @@
 object NthPrime {
-    val isPrime = (x: Int) => (2 to math.sqrt(x).toInt).dropWhile(x % _ != 0).isEmpty
+  private val isPrime = (x: Int) => (2 to math.sqrt(x).toInt).dropWhile(x % _ != 0).isEmpty
 
   //  Alternative - 01
   //  val isPrime = (x: Int) => (2 to math.sqrt(x).toInt).dropWhile(x % _ != 0).headOption.map(_ => false).getOrElse(true)

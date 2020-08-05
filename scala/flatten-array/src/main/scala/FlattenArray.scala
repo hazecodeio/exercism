@@ -3,6 +3,11 @@ import scala.annotation.tailrec
 object FlattenArray {
 
   def flatten(arr: List[_]): List[_] = {
+//    viaNonTailRecursion(arr)
+    viaTailRecursion(arr)
+  }
+
+  private def viaNonTailRecursion(arr: List[_]): List[_] = {
     arr match {
       case Nil => Nil
       case (x: List[_]) :: tail => flatten(x) ::: flatten(tail)
@@ -11,7 +16,7 @@ object FlattenArray {
   }
 
   // a TailRec version
-  def flatten2(arr: List[_]): List[_] = {
+  private def viaTailRecursion(arr: List[_]): List[_] = {
     @tailrec
     def loop(leadArr: List[_], trailArr: List[_], flatAccumulator: List[_]): List[_] = {
       (leadArr, trailArr) match {
