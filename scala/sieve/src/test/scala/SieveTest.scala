@@ -1,7 +1,9 @@
-import org.scalatest.{Matchers, FunSuite}
+//import org.scalatest.{Matchers, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
 /** @version 1.1.0 */
-class SieveTest extends FunSuite with Matchers {
+class SieveTest extends AnyFunSuite with Matchers {
 
   test("no primes under two") {
     Sieve.primes(1) should be(List())

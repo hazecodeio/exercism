@@ -1,7 +1,9 @@
-import org.scalatest.{Matchers, FunSuite}
+//import org.scalatest.{Matchers, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
 /** @version 1.4.0 */
-class PangramsTest extends FunSuite with Matchers {
+class PangramsTest extends AnyFunSuite with Matchers {
 
   test("sentence empty") {
     Pangrams.isPangram("") should be (false)
