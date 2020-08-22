@@ -13,7 +13,7 @@ class AccumulateTest extends AnyFlatSpec with should.Matchers {
   it should "accumulate squares" in {
     val accumulate = new Accumulate
     val accumulation = accumulate.accumulate[Int, Int](x => x * x, List(1, 2, 3))
-    accumulation should be (List(1, 4, 9, 1))
+    accumulation should be (List(1, 4, 9))
   }
 
   it should "accumulate upcases" in {

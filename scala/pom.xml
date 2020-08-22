@@ -36,6 +36,7 @@
         <module>prime-factors</module>
         <module>nth-prime</module>
         <module>pascals-triangle</module>
+        <module>grade-school</module>
     </modules>
 
     <name>${project.artifactId}</name>
