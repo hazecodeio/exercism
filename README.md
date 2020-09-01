@@ -1,1 +1,3 @@
-# scala-exercism
+# Exercism
+## Exercism - Scala
+## Exercism - Java
