@@ -49,7 +49,7 @@
         <scala.compat.version>2.13</scala.compat.version>
         <spec2.version>4.10.3</spec2.version>
         <scalatest.version>3.2.2</scalatest.version>
-        <junit4.version>4.13</junit4.version>
+        <junit4.version>4.13.1</junit4.version>
     </properties>
 
     <dependencyManagement>
