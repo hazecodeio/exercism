@@ -23,7 +23,7 @@ enum StrategyE implements Function<String, String> {
 
 class ReverseString {
 
-    StrategyE strategy;
+    Function<String, String> strategy;
 
     ReverseString() {
         strategy = StrategyE.DEFAULT;
