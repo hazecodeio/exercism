@@ -18,6 +18,7 @@
         <module>resistor-color-duo</module>
         <module>darts</module>
         <module>armstrong-numbers</module>
+        <module>rna-transcription</module>
     </modules>
 
     <name>${project.artifactId}</name>
