@@ -15,6 +15,7 @@
         <module>reverse-string</module>
         <module>leap</module>
         <module>resistor-color</module>
+        <module>resistor-color-duo</module>
     </modules>
 
     <name>${project.artifactId}</name>
