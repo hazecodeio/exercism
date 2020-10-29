@@ -13,6 +13,7 @@
         <module>hello-world</module>
         <module>two-fer</module>
         <module>reverse-string</module>
+        <module>leap</module>
     </modules>
 
     <name>${project.artifactId}</name>
