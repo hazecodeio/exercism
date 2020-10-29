@@ -24,11 +24,18 @@ class Leap {
                 return LocalDate.of(year, 1, 1).isLeapYear();
             }
         },
-        CALCULATION {
+        CALC_01 {
             @Override
             public Boolean apply(int year) {
                 return (year % 4 == 0) && !((year % 100 == 0) && !(year % 400 == 0));
             }
+        },
+        CALC_02 {
+            @Override
+            public Boolean apply(int year) {
+                return (year % 400 == 0) || ((year % 4 == 0) && !(year % 100 == 0));
+            }
+
         }
     }
 
