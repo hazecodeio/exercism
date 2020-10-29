@@ -17,6 +17,7 @@
         <module>resistor-color</module>
         <module>resistor-color-duo</module>
         <module>darts</module>
+        <module>armstrong-numbers</module>
     </modules>
 
     <name>${project.artifactId}</name>
