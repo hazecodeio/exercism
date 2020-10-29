@@ -14,6 +14,7 @@
         <module>two-fer</module>
         <module>reverse-string</module>
         <module>leap</module>
+        <module>resistor-color</module>
     </modules>
 
     <name>${project.artifactId}</name>
