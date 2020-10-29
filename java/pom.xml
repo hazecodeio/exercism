@@ -16,6 +16,7 @@
         <module>leap</module>
         <module>resistor-color</module>
         <module>resistor-color-duo</module>
+        <module>darts</module>
     </modules>
 
     <name>${project.artifactId}</name>
