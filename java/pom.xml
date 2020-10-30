@@ -21,6 +21,7 @@
         <module>rna-transcription</module>
         <module>pangram</module>
         <module>gigasecond</module>
+        <module>scrabble-score</module>
     </modules>
 
     <name>${project.artifactId}</name>
