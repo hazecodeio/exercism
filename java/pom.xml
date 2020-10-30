@@ -19,6 +19,7 @@
         <module>darts</module>
         <module>armstrong-numbers</module>
         <module>rna-transcription</module>
+        <module>pangram</module>
     </modules>
 
     <name>${project.artifactId}</name>
