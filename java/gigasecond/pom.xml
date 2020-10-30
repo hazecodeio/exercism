@@ -11,6 +11,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>gigasecon</artifactId>
+    <artifactId>gigasecond</artifactId>
 
 </project>
