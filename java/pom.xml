@@ -22,6 +22,7 @@
         <module>pangram</module>
         <module>gigasecond</module>
         <module>scrabble-score</module>
+        <module>space-age</module>
     </modules>
 
     <name>${project.artifactId}</name>
