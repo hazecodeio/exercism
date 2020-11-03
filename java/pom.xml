@@ -26,6 +26,8 @@
         <module>hamming</module>
         <module>dnd-character</module>
         <module>grains</module>
+        <module>acronym</module>
+        <module>difference-of-squares</module>
     </modules>
 
     <name>${project.artifactId}</name>
