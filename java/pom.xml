@@ -23,6 +23,9 @@
         <module>gigasecond</module>
         <module>scrabble-score</module>
         <module>space-age</module>
+        <module>hamming</module>
+        <module>dnd-character</module>
+        <module>grains</module>
     </modules>
 
     <name>${project.artifactId}</name>
@@ -44,11 +47,18 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.1</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-core</artifactId>
             <version>2.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.18.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.tempus-fugit</groupId>
