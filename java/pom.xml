@@ -29,6 +29,7 @@
         <module>acronym</module>
         <module>difference-of-squares</module>
         <module>secret-handshake</module>
+        <module>raindrops</module>
     </modules>
 
     <name>${project.artifactId}</name>
