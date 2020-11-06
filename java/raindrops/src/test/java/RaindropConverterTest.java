@@ -1,12 +1,26 @@
 import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+import java.util.EnumSet;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.runners.Parameterized.*;
 
+@RunWith(Parameterized.class)
 public class RaindropConverterTest {
 
-    private RaindropConverter raindropConverter = new RaindropConverter();
+    private RaindropConverter raindropConverter;
 
+    public RaindropConverterTest(RaindropConverter.StrategyE strategy) {
+        this.raindropConverter = new RaindropConverter(strategy);
+    }
+
+    @Parameters(name = "Strategy -> {0}")
+    public static  EnumSet<RaindropConverter.StrategyE> getEnums(){
+        return EnumSet.allOf(RaindropConverter.StrategyE.class);
+    }
     @Test
     public void soundFor1Is1() {
         assertEquals("1", raindropConverter.convert(1));
