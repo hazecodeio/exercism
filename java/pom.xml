@@ -30,6 +30,7 @@
         <module>difference-of-squares</module>
         <module>secret-handshake</module>
         <module>raindrops</module>
+        <module>perfect-numbers</module>
     </modules>
 
     <name>${project.artifactId}</name>
