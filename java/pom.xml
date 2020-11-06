@@ -28,6 +28,7 @@
         <module>grains</module>
         <module>acronym</module>
         <module>difference-of-squares</module>
+        <module>secret-handshake</module>
     </modules>
 
     <name>${project.artifactId}</name>
