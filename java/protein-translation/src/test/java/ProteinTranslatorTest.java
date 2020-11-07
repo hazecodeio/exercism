@@ -1,19 +1,25 @@
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(Parameterized.class)
 public class ProteinTranslatorTest {
 
     private ProteinTranslator proteinTranslator;
 
-    @Before
-    public void setUp() {
-        proteinTranslator = new ProteinTranslator();
+    public ProteinTranslatorTest(ProteinTranslator.StrategyE strategy) {
+        this.proteinTranslator = new ProteinTranslator(strategy);
+    }
+
+    @Parameterized.Parameters(name = "Strategy -> {0}")
+    public static EnumSet<ProteinTranslator.StrategyE> getEnums() {
+        return EnumSet.allOf(ProteinTranslator.StrategyE.class);
     }
 
     @Test

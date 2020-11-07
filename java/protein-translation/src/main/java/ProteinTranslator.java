@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -17,28 +18,66 @@ class ProteinTranslator {
             Set.of("UGU", "UGC"), "Cysteine",
             Set.of("UGG"), "Tryptophan"
     );
-    private Set<String> stopCodons = Set.of("UAA", "UAG", "UGA");
+    private static Set<String> stopCodons = Set.of("UAA", "UAG", "UGA");
 
-    List<String> translate(String rnaSequence) {
+    Function<String, List<String>> strategy;
 
-        char[] chars = rnaSequence.toCharArray();
-
-        Stream<String> slidingInputStream = getSlidingStream(chars, 3, 3);
-
-        return slidingInputStream
-                .takeWhile(s -> !stopCodons.contains(s))
-                .flatMap(codon -> aminos.keySet()
-                        .stream()
-                        .filter(codonKey -> codonKey.contains(codon))
-                        .map(codonKey -> aminos.get(codonKey)))
-                .collect(Collectors.toList());
-
+    public ProteinTranslator() {
+        strategy = StrategyE.FLATTENED_EARLY;
     }
 
-    private Stream<String> getSlidingStream(char[] chars, int size, int step) {
-        return IntStream.range(0, chars.length / step)
-                .map(i -> i * step)
-                .mapToObj(i -> Arrays.copyOfRange(chars, i, Math.min(i + size, chars.length)))
-                .map(cs -> String.valueOf(cs));
+    public ProteinTranslator(Function<String, List<String>> strategy) {
+        this.strategy = strategy;
+    }
+
+    List<String> translate(String rnaSequence) {
+        return strategy.apply(rnaSequence);
+    }
+
+    enum StrategyE implements Function<String, List<String>> {
+
+        FLATTENED_LATER {
+            @Override
+            public List<String> apply(String rnaSequence) {
+                char[] chars = rnaSequence.toCharArray();
+
+                Stream<String> slidingInputStream = getSlidingStream(chars, 3, 3);
+
+                return slidingInputStream
+                        .takeWhile(s -> !stopCodons.contains(s))
+                        .flatMap(codon -> aminos.keySet()
+                                .stream()
+                                .filter(codonKey -> codonKey.contains(codon))
+                                .map(codonKey -> aminos.get(codonKey)))
+                        .collect(Collectors.toList());
+            }
+        },
+        FLATTENED_EARLY {
+            Map<String, String> flattenedMap = aminos.entrySet()
+                    .stream()
+                    .flatMap(entry -> entry.getKey().stream().map(key -> Map.entry(key, entry.getValue())))
+                    .collect(Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue()));
+
+            @Override
+            public List<String> apply(String rnaSequence) {
+                char[] chars = rnaSequence.toCharArray();
+
+                Stream<String> slidingInputStream = getSlidingStream(chars, 3, 3);
+
+                return slidingInputStream
+                        .takeWhile(s -> !stopCodons.contains(s))
+                        .filter(s -> flattenedMap.containsKey(s))
+                        .map(codonKey -> flattenedMap.get(codonKey))
+                        .collect(Collectors.toList());
+
+            }
+        };
+
+        private static Stream<String> getSlidingStream(char[] chars, int size, int step) {
+            return IntStream.range(0, chars.length / step)
+                    .map(i -> i * step)
+                    .mapToObj(i -> Arrays.copyOfRange(chars, i, Math.min(i + size, chars.length)))
+                    .map(cs -> String.valueOf(cs));
+        }
     }
 }

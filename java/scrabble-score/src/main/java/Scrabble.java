@@ -17,7 +17,7 @@ class Scrabble {
     static Stream<Map<Character, Integer>> FLATTENED_STREAM_OF_MAPS = SCORE_MAP
             .entrySet()
             .stream()
-            .flatMap(e -> e.getKey().stream().map(k -> Map.of(k, e.getValue())));
+            .flatMap(e -> e.getKey().stream().map(k -> Map.of(k, e.getValue())));//ToDo - Replace with Map.entry()
 
     static Map<Character, Integer> FLAT_SCORE_MAP = FLATTENED_STREAM_OF_MAPS
             .collect(Collectors.toMap
