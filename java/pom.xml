@@ -31,6 +31,7 @@
         <module>secret-handshake</module>
         <module>raindrops</module>
         <module>perfect-numbers</module>
+        <module>protein-translation</module>
     </modules>
 
     <name>${project.artifactId}</name>
