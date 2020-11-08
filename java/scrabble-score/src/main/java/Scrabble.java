@@ -1,7 +1,6 @@
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 class Scrabble {
 
@@ -14,17 +13,12 @@ class Scrabble {
             List.of('J', 'X'), 8,
             List.of('Q', 'Z'), 10
     );
-    static Stream<Map<Character, Integer>> FLATTENED_STREAM_OF_MAPS = SCORE_MAP
+
+    static Map<Character, Integer> FLAT_SCORE_MAP = SCORE_MAP
             .entrySet()
             .stream()
-            .flatMap(e -> e.getKey().stream().map(k -> Map.of(k, e.getValue())));//ToDo - Replace with Map.entry()
-
-    static Map<Character, Integer> FLAT_SCORE_MAP = FLATTENED_STREAM_OF_MAPS
-            .collect(Collectors.toMap
-                    (
-                            m -> m.keySet().stream().findAny().get(),
-                            m -> m.values().stream().findAny().get()
-                    ));
+            .flatMap(entry -> entry.getKey().stream().map(key -> Map.entry(key, entry.getValue())))
+            .collect(Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue()));
 
     int score;
 
