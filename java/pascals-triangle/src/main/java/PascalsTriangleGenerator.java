@@ -71,6 +71,23 @@ public class PascalsTriangleGenerator {
                 else
                     return loop(r, c + 1, Stream.concat(pascalsRows.stream(), Stream.of(nextRow(pascalsRows.get(pascalsRows.size() - 1)))).collect(Collectors.toList()));
             }
+        },
+        SIMPLE {
+            @Override
+            public int[][] apply(int r) {
+                int[][] pascalsRows = new int[r][];
+
+                for (int i = 0; i < r; i++) {
+                    pascalsRows[i] = new int[i + 1];
+                    pascalsRows[i][0] = 1;
+                    pascalsRows[i][i] = 1;
+
+                    for (int j = 1; j < i; j++) {
+                        pascalsRows[i][j] = pascalsRows[i - 1][j] + pascalsRows[i - 1][j - 1];
+                    }
+                }
+                return pascalsRows;
+            }
         }
     }
 }
