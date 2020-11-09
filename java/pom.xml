@@ -36,9 +36,10 @@
 
         <!--Medium-->
         <module>nth-prime</module>
+        <module>pascals-triangle</module>
 
         <!--Hard-->
-        <module>say</module>
+        <module>say</module><!--ToDo - TBC-->
 
     </modules>
 
