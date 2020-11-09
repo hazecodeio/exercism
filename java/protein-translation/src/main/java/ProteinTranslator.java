@@ -74,7 +74,7 @@ class ProteinTranslator {
         };
 
         private static Stream<String> getSlidingStream(char[] chars, int size, int step) {
-            return IntStream.range(0, chars.length / step)
+            return IntStream.range(0, (int) Math.ceil(chars.length / (double)step))
                     .map(i -> i * step)
                     .mapToObj(i -> Arrays.copyOfRange(chars, i, Math.min(i + size, chars.length)))
                     .map(cs -> String.valueOf(cs));

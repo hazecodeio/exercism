@@ -32,6 +32,7 @@
         <module>raindrops</module>
         <module>perfect-numbers</module>
         <module>protein-translation</module>
+        <module>say</module>
     </modules>
 
     <name>${project.artifactId}</name>
