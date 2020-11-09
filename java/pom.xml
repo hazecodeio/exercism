@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <!--Easy-->
         <module>hello-world</module>
         <module>two-fer</module>
         <module>reverse-string</module>
@@ -32,7 +33,13 @@
         <module>raindrops</module>
         <module>perfect-numbers</module>
         <module>protein-translation</module>
+
+        <!--Medium-->
+        <module>nth-prime</module>
+
+        <!--Hard-->
         <module>say</module>
+
     </modules>
 
     <name>${project.artifactId}</name>
