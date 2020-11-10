@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.NoSuchElementException;
 
 /*
@@ -72,8 +73,14 @@ public class SimpleLinkedList<E> {
         }
     }
 
-    public <T> T[] asArray(Class<T> classType) { // ToDO - TBC
-        return null;
+    public <T> T[] asArray(Class<T> clazz) {
+        T[] llAsArray = (T[]) Array.newInstance(clazz, size);
+
+        Node node = this.first;
+        for (int i = 0; node != null; node = node.next)
+            llAsArray[i++] = (T) node.element;
+
+        return llAsArray;
     }
 
     private class Node {
