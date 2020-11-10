@@ -38,6 +38,7 @@
         <module>nth-prime</module>
         <module>pascals-triangle</module>
         <module>simple-linked-list</module>
+        <module>sieve</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
