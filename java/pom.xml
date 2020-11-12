@@ -39,6 +39,7 @@
         <module>pascals-triangle</module>
         <module>simple-linked-list</module>
         <module>sieve</module>
+        <module>isogram</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
