@@ -18,8 +18,6 @@ class Anagram {
                 .collect(Collectors.groupingBy(
                         Map.Entry::getKey,
                         Collectors.counting()));
-
-        System.out.println(reducedCount);
     }
 
     public List<String> match(List<String> toBeMatched) {
