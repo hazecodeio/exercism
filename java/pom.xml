@@ -40,6 +40,7 @@
         <module>simple-linked-list</module>
         <module>sieve</module>
         <module>isogram</module>
+        <module>sum-of-multiples</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
