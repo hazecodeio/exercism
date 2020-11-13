@@ -86,6 +86,20 @@ class IsogramChecker {
 
                 return reducedCount.entrySet().stream().mapToInt(e -> e.getValue().getValue()).noneMatch(v -> v > 1);
             }
+        },
+        MAP_REDUCE_V3{
+            @Override
+            public Boolean apply(String phrase) {
+                Map<Character, Long> reducedCount = phrase
+                        .toLowerCase().chars().mapToObj(c -> (char) c)
+                        .filter(c -> c != '-' && c != ' ')
+                        .map(c -> Map.entry(c, 1))
+                        .collect(Collectors.groupingBy(
+                                Map.Entry::getKey,
+                                Collectors.counting())); // counting() instead of reduce()
+
+                return reducedCount.entrySet().stream().map(e -> e.getValue()).noneMatch(v -> v > 1);
+            }
         }
     }
 }
