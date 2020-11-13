@@ -41,6 +41,7 @@
         <module>sieve</module>
         <module>isogram</module>
         <module>sum-of-multiples</module>
+        <module>anagram</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
