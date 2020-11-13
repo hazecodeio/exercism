@@ -14,10 +14,6 @@ class Anagram {
     public Anagram(String word) {
         this.word = word;
         this.strategy = StrategyE.MAP_REDUCE;
-        Map<Character, Long> reducedCount = word.chars().mapToObj(c -> (char) c).map(c -> Map.entry(c, 1))
-                .collect(Collectors.groupingBy(
-                        Map.Entry::getKey,
-                        Collectors.counting()));
     }
 
     public List<String> match(List<String> toBeMatched) {
