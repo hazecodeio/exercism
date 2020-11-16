@@ -43,6 +43,7 @@
         <module>sum-of-multiples</module>
         <module>anagram</module>
         <module>clock</module>
+        <module>sublist</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
