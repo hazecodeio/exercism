@@ -1,6 +1,7 @@
 import java.util.Collections;
 import java.util.List;
 import java.util.function.BiFunction;
+import java.util.stream.Collectors;
 
 class RelationshipComputer<T> {
 
@@ -58,6 +59,26 @@ class RelationshipComputer<T> {
 
                 return Relationship.UNEQUAL;
             }
+        },
+        S3 {
+            @Override
+            public Relationship apply(List<?> l1, List<?> l2) {
+                if (l1.equals(l2))
+                    return Relationship.EQUAL;
+
+                if (reduceToString(l2).contains(reduceToString(l1)))
+                    return Relationship.SUBLIST;
+
+                if (reduceToString(l1).contains(reduceToString(l2)))
+                    return Relationship.SUPERLIST;
+
+                return Relationship.UNEQUAL;
+            }
+
+            private String reduceToString(List<?> l1) {
+                return l1.stream().map(o -> String.valueOf(o)).collect(Collectors.joining("|"));
+            }
+
         }
     }
 }
