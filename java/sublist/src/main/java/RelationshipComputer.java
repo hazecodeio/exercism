@@ -52,7 +52,8 @@ class RelationshipComputer<T> {
 
                 if (Collections.indexOfSubList(l2, l1) >= 0)
                     return Relationship.SUBLIST;
-                else if (Collections.indexOfSubList(l1, l2) >= 0)
+
+                if (Collections.indexOfSubList(l1, l2) >= 0)
                     return Relationship.SUPERLIST;
 
                 return Relationship.UNEQUAL;
