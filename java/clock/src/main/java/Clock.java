@@ -53,8 +53,6 @@ class Clock {
     @Override
     public String toString() {
         Clock normalizedClock = normalizeClock(hour, minute);
-        return new StringBuilder()
-                .append(String.format("%02d:%02d", normalizedClock.hour, normalizedClock.minute))
-                .toString();
+        return String.format("%02d:%02d", normalizedClock.hour, normalizedClock.minute);
     }
 }
