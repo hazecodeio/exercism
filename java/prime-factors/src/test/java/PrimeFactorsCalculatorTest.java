@@ -1,19 +1,27 @@
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.EnumSet;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.runners.Parameterized.*;
 
+@RunWith(Parameterized.class)
 public class PrimeFactorsCalculatorTest {
 
     private PrimeFactorsCalculator primeFactorsCalculator;
 
-    @Before
-    public void setUp() {
-        primeFactorsCalculator = new PrimeFactorsCalculator();
+    public PrimeFactorsCalculatorTest(PrimeFactorsCalculator.StrategyE strategy) {
+        this.primeFactorsCalculator = new PrimeFactorsCalculator(strategy);
+    }
+
+    @Parameters(name = "Strategy -> {0}")
+    public static EnumSet<PrimeFactorsCalculator.StrategyE> getEnums() {
+        return EnumSet.allOf(PrimeFactorsCalculator.StrategyE.class);
     }
 
     @Test
