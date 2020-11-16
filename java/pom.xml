@@ -42,6 +42,7 @@
         <module>isogram</module>
         <module>sum-of-multiples</module>
         <module>anagram</module>
+        <module>clock</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
