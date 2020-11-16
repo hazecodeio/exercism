@@ -44,6 +44,7 @@
         <module>anagram</module>
         <module>clock</module>
         <module>sublist</module>
+        <module>prime-factors</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
