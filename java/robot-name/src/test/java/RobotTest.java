@@ -46,7 +46,7 @@ public class RobotTest {
     @Test
     public void allRobotsMustHaveUniqueNames() {
         Set<String> alreadySet = new HashSet<>();
-        for(int i : IntStream.rangeClosed(0, 67600).toArray()) {
+        for (int i : IntStream.rangeClosed(0, 67600).toArray()) {
             String name = new Robot().getName();
             if (alreadySet.contains(name)) {
                 throw new IllegalArgumentException(String.format("%s is repeated", name));
