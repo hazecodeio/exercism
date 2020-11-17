@@ -45,6 +45,7 @@
         <module>clock</module>
         <module>sublist</module>
         <module>prime-factors</module>
+        <module>collatz-conjecture</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
