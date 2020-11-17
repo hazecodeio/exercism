@@ -1,17 +1,27 @@
+import java.util.Objects
+
 import scala.annotation.tailrec
 
 object FlattenArray {
 
+  def viaMapOp(arr: List[_]): List[_] = {
+    val mapper: (Any => List[_]) = param => if (param.isInstanceOf[List[_]]) viaMapOp(param.asInstanceOf[List[_]]) else List(param)
+    arr.filter(Objects.nonNull)
+      .map(mapper)
+      .flatten
+  }
+
   def flatten(arr: List[_]): List[_] = {
-//    viaNonTailRecursion(arr)
+    viaNonTailRecursion(arr)
     viaTailRecursion(arr)
+    viaMapOp(arr)
   }
 
   private def viaNonTailRecursion(arr: List[_]): List[_] = {
     arr match {
       case Nil => Nil
-      case (x: List[_]) :: tail => flatten(x) ::: flatten(tail)
-      case x :: tail => if (x != null) x :: flatten(tail) else flatten(tail)
+      case (x: List[_]) :: tail => viaNonTailRecursion(x) ::: viaNonTailRecursion(tail)
+      case x :: tail => if (x != null) x :: viaNonTailRecursion(tail) else viaNonTailRecursion(tail)
     }
   }
 

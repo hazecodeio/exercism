@@ -48,6 +48,7 @@
         <module>collatz-conjecture</module>
         <module>triangle</module>
         <module>robot-name</module>
+        <module>flatten-array</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
