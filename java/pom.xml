@@ -46,6 +46,7 @@
         <module>sublist</module>
         <module>prime-factors</module>
         <module>collatz-conjecture</module>
+        <module>triangle</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
