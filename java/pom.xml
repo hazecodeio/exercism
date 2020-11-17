@@ -47,6 +47,7 @@
         <module>prime-factors</module>
         <module>collatz-conjecture</module>
         <module>triangle</module>
+        <module>robot-name</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
