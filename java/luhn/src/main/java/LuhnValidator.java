@@ -30,12 +30,4 @@ class LuhnValidator {
             n -= 9;
         return n;
     }
-
-    private int processDigit(int n) {
-        n *= 2;
-        if (n > 9)
-            n -= 9;
-        return n;
-    }
-
 }
