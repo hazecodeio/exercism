@@ -50,6 +50,7 @@
         <module>robot-name</module>
         <module>flatten-array</module>
         <module>matrix</module>
+        <module>isbn-verifier</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
