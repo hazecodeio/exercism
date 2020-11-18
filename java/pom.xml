@@ -51,6 +51,7 @@
         <module>flatten-array</module>
         <module>matrix</module>
         <module>isbn-verifier</module>
+        <module>luhn</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
