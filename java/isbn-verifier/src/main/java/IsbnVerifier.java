@@ -6,17 +6,17 @@ class IsbnVerifier {
 
         String cleanedStr = stringToVerify.replaceAll("-", "");
 
-        if (!cleanedStr.matches("^[0-9]{9}[X0-9]"))
+        if (!cleanedStr.matches("^\\d{9}[X0-9]$"))
             return false;
 
         char[] digits = cleanedStr.toCharArray();
-        int checkDigit = (digits[9] == 'X') ? 10 : Integer.parseInt(String.valueOf(digits[9]));
+        int checkDigit = (digits[9] == 'X') ? 10 : Character.getNumericValue(digits[9]);
 
         int sumOfMultiples = 0;
         int[] factors = Stream.iterate(10, i -> i - 1).mapToInt(i -> i).limit(10).toArray();
 
         for (int i = 0; i < digits.length - 1; i++)
-            sumOfMultiples += Integer.parseInt(String.valueOf(digits[i])) * factors[i];
+            sumOfMultiples += Character.getNumericValue(digits[i]) * factors[i];
 
         return (sumOfMultiples + checkDigit) % 11 == 0;
     }
