@@ -49,6 +49,7 @@
         <module>triangle</module>
         <module>robot-name</module>
         <module>flatten-array</module>
+        <module>matrix</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
