@@ -12,8 +12,7 @@ class LuhnValidator {
         char[] reversedChars = new StringBuilder(str).reverse().toString().toCharArray();
 
         int[] processedDigits = IntStream.range(0, reversedChars.length)
-                .map(i ->
-                        mapWithPredicate(i, Character.getNumericValue(reversedChars[i]), i % 2 == 0))
+                .map(i -> mapWithPredicate(i, Character.getNumericValue(reversedChars[i]), i % 2 == 0))
                 .toArray();
 
         if (Arrays.stream(processedDigits).sum() % 10 == 0)
