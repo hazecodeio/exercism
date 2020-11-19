@@ -52,6 +52,7 @@
         <module>matrix</module>
         <module>isbn-verifier</module>
         <module>luhn</module>
+        <module>largest-series-product</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
