@@ -24,15 +24,15 @@ class Transpose {
             @Override
             public String apply(String input) {
                 String[] rows = input.split("\n");
-                
+
                 int nRows = Stream.of(rows).mapToInt(String::length).max().orElse(0);
                 int nCols = rows.length;
 
                 List<String> transposed = new ArrayList<>();
 
                 for (int i = 0; i < nRows; i++) {
-                    StringBuilder sb = new StringBuilder();
 
+                    StringBuilder sb = new StringBuilder();
                     for (int j = 0; j < nCols; j++) {
                         char c = rows[j].length() > i ? rows[j].charAt(i) : ' ';
                         sb.append(c);
