@@ -1,0 +1,217 @@
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+import java.util.EnumSet;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.runners.Parameterized.Parameters;
+
+@RunWith(Parameterized.class)
+public class TransposeTest {
+    private Transpose transpose;
+
+    public TransposeTest(Transpose.StrategyE strategy) {
+        this.transpose = new Transpose(strategy);
+    }
+
+    @Parameters(name = "Strategy -> {0}")
+    public static EnumSet<Transpose.StrategyE> getEnums() {
+        return EnumSet.allOf(Transpose.StrategyE.class);
+    }
+
+    @Test
+    public void emptyString() {
+        String input = "";
+
+        String expected = "";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void twoCharactersInARow() {
+        String input = "A1";
+
+        String expected = "A" +
+                "\n1";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void twoCharactersInAColumn() {
+        String input = "A\n" +
+                "1";
+
+        String expected = "A1";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void simple() {
+        String input = "ABC\n" +
+                "123";
+
+        String expected = "A1\n" +
+                "B2\n" +
+                "C3";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void singleLine() {
+        String input = "Single line.";
+
+        String expected = "S\n" +
+                "i\n" +
+                "n\n" +
+                "g\n" +
+                "l\n" +
+                "e\n" +
+                " \n" +
+                "l\n" +
+                "i\n" +
+                "n\n" +
+                "e\n" +
+                ".";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void firstLineLongerThanSecondLine() {
+        String input = "The fourth line.\n" +
+                "The fifth line.";
+
+        String expected = "TT\n" +
+                "hh\n" +
+                "ee\n" +
+                "  \n" +
+                "ff\n" +
+                "oi\n" +
+                "uf\n" +
+                "rt\n" +
+                "th\n" +
+                "h \n" +
+                " l\n" +
+                "li\n" +
+                "in\n" +
+                "ne\n" +
+                "e.\n" +
+                ".";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void secondLineLongerThanFirstLine() {
+        String input = "The first line.\n" +
+                "The second line.";
+
+        String expected = "TT\n" +
+                "hh\n" +
+                "ee\n" +
+                "  \n" +
+                "fs\n" +
+                "ie\n" +
+                "rc\n" +
+                "so\n" +
+                "tn\n" +
+                " d\n" +
+                "l \n" +
+                "il\n" +
+                "ni\n" +
+                "en\n" +
+                ".e\n" +
+                " .";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void mixedLineLength() {
+        String input = "The longest line.\n" +
+                "A long line.\n" +
+                "A longer line.\n" +
+                "A line.";
+
+        String expected = "TAAA\n" +
+                "h   \n" +
+                "elll\n" +
+                " ooi\n" +
+                "lnnn\n" +
+                "ogge\n" +
+                "n e.\n" +
+                "glr\n" +
+                "ei \n" +
+                "snl\n" +
+                "tei\n" +
+                " .n\n" +
+                "l e\n" +
+                "i .\n" +
+                "n\n" +
+                "e\n" +
+                ".";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void square() {
+        String input = "HEART\n" +
+                "EMBER\n" +
+                "ABUSE\n" +
+                "RESIN\n" +
+                "TREND";
+
+        String expected = "HEART\n" +
+                "EMBER\n" +
+                "ABUSE\n" +
+                "RESIN\n" +
+                "TREND";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void rectangle() {
+        String input = "FRACTURE\n" +
+                "OUTLINED\n" +
+                "BLOOMING\n" +
+                "SEPTETTE";
+
+        String expected = "FOBS\n" +
+                "RULE\n" +
+                "ATOP\n" +
+                "CLOT\n" +
+                "TIME\n" +
+                "UNIT\n" +
+                "RENT\n" +
+                "EDGE";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+    @Test
+    public void triangle() {
+        String input = "T\n" +
+                "EE\n" +
+                "AAA\n" +
+                "SSSS\n" +
+                "EEEEE\n" +
+                "RRRRRR";
+
+        String expected = "TEASER\n" +
+                " EASER\n" +
+                "  ASER\n" +
+                "   SER\n" +
+                "    ER\n" +
+                "     R";
+
+        assertEquals(expected, transpose.transpose(input));
+    }
+
+}
