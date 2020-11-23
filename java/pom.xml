@@ -55,6 +55,7 @@
         <module>largest-series-product</module>
         <module>linked-list</module>
         <module>transpose</module>
+        <module>saddle-points</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
