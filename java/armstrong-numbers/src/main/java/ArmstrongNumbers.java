@@ -39,6 +39,7 @@ class ArmstrongNumbers {
                 String numString = String.valueOf(numberToCheck);
                 return numString.chars()
                         .map(d -> Character.digit(d, 10))
+                        //.map(d -> Character.getNumericValue(d)) // Alternative to Character.digit()
                         .map(d -> (int) Math.pow(d, numString.length()))
                         .sum() == numberToCheck;
             }
