@@ -1,6 +1,8 @@
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.IntFunction;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 class ResistorColorDuo {
 
@@ -42,6 +44,17 @@ class ResistorColorDuo {
             @Override
             public Integer apply(String[] colors) {
                 return COLORS.indexOf(colors[0]) * 10 + COLORS.indexOf(colors[1]);
+            }
+        }
+        ,
+        CALC_VIA_STREAM{
+            @Override
+            public Integer apply(String[] colors) {
+                String intString = IntStream.range(0, colors.length)
+                        .limit(2) // Since it's Duo
+                        .mapToObj(i -> String.valueOf(COLORS.indexOf(colors[i])))
+                        .collect(Collectors.joining());
+                return Integer.valueOf(intString);
             }
         }
     }
