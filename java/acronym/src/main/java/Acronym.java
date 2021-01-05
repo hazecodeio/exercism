@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 class Acronym {
 
     private String phrase;
@@ -16,6 +19,9 @@ class Acronym {
         }
 
         return acronymBuilder.toString();
+
+        // Via Streams
+        //return Arrays.stream(split).filter(str -> !str.isBlank()).map(str -> String.valueOf(str.charAt(0)).toUpperCase()).collect(Collectors.joining());
     }
 
 }
