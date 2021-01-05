@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -35,6 +32,28 @@ class ProteinTranslator {
     }
 
     enum StrategyE implements Function<String, List<String>> {
+
+        ITERATIVE {
+            Map<String, String> flattenedMap = aminos.entrySet()
+                    .stream()
+                    .flatMap(entry -> entry.getKey().stream().map(key -> Map.entry(key, entry.getValue())))
+                    .collect(Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue()));
+
+            @Override
+            public List<String> apply(String rnaSequence) {
+
+                List<String> codonsOf3 = new ArrayList<>();
+
+                for(int i = 0; i < rnaSequence.length(); i+=3)
+                    codonsOf3.add(rnaSequence.substring(i, Math.min(i + 3, rnaSequence.length())));
+
+                return codonsOf3.stream()
+                        .takeWhile(s -> !stopCodons.contains(s))
+                        .filter(s -> flattenedMap.containsKey(s))
+                        .map(codonKey -> flattenedMap.get(codonKey))
+                        .collect(Collectors.toList());
+            }
+        },
 
         FLATTENED_LATER {
             @Override
