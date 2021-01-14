@@ -59,6 +59,7 @@
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
+        <module>list-ops</module>
 
     </modules>
 
