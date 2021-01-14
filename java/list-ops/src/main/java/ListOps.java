@@ -19,9 +19,9 @@ class ListOps {
     }
 
     static <T> List<T> append(List<T> list1, List<T> list2) {
-        if(list1.isEmpty())
+        /*if(list1.isEmpty())
             return list2;
-        /*for(T t : list2)
+        for(T t : list2)
             list1.add(t);*/ // Arrays.asList() supplies Unmodifiable List in TestCase
         List<T> appendedList = new ArrayList<>(list1); // not in favor of creating an ArrayList(). What if List was actually a LinkedList
         appendedList.addAll(list2);
