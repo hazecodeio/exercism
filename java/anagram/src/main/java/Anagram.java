@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
@@ -13,7 +10,7 @@ class Anagram {
 
     public Anagram(String word) {
         this.word = word;
-        this.strategy = StrategyE.MAP_REDUCE;
+        this.strategy = StrategyE.MAP_DECLARATIVE;
     }
 
     public List<String> match(List<String> toBeMatched) {
@@ -40,6 +37,36 @@ class Anagram {
                         matches.add(str);
                 }
                 return matches;
+            }
+        },
+        MAP_DECLARATIVE {
+            @Override
+            public List<String> apply(String word, List<String> toBeMatched) {
+                Map<Character, Long> charCountInWord = mapToCharCount(word);
+
+                List<String> matches = new ArrayList<>();
+
+                for (String str : toBeMatched) {
+                    if (word.equalsIgnoreCase(str))
+                        continue;
+
+                    Map<Character, Long> charCountInStr = mapToCharCount(str);
+
+                    if (charCountInStr.equals(charCountInWord))
+                        matches.add(str);
+                }
+                return matches;
+            }
+
+            private Map<Character, Long> mapToCharCount(String word) {
+                Map<Character, Long> charCountMap = new HashMap<>();
+                for(char c : word.toLowerCase().toCharArray()){
+                    if(!charCountMap.containsKey(c))
+                        charCountMap.put(c, 1L);
+                    else
+                        charCountMap.put(c, charCountMap.get(c)+1L);
+                }
+                return charCountMap;
             }
         },
         MAP_REDUCE {
