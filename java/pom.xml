@@ -57,6 +57,7 @@
         <module>transpose</module>
         <module>saddle-points</module>
         <module>binary-search-tree</module>
+        <module>rotational-cipher</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
