@@ -58,6 +58,7 @@
         <module>saddle-points</module>
         <module>binary-search-tree</module>
         <module>rotational-cipher</module>
+        <module>minesweeper</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
