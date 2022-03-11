@@ -56,9 +56,14 @@
         <module>linked-list</module>
         <module>transpose</module>
         <module>saddle-points</module>
+        <module>binary-search-tree</module>
+        <module>rotational-cipher</module>
+        <module>minesweeper</module>
 
         <!--Hard-->
         <module>say</module><!--ToDo - TBC-->
+        <module>list-ops</module>
+        <module>circular-buffer</module>
 
     </modules>
 

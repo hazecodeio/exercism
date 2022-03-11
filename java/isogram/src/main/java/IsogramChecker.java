@@ -19,11 +19,24 @@ class IsogramChecker {
     }
 
     enum StrategyE implements Function<String, Boolean> {
-        SIMPLE_V1 {
+        SIMPLE_V1_1 {
             @Override
             public Boolean apply(String phrase) {
                 phrase = phrase.toLowerCase().replaceAll("\\W", "");
                 return phrase.length() == phrase.chars().distinct().count();
+            }
+        },
+        SIMPLE_V1_2{
+            @Override
+            public Boolean apply(String s) {
+                Set<Character> set = new HashSet<>();
+                String ss = s.toLowerCase().replaceAll("\\W","");
+                for(char c : ss.toCharArray()){
+                    if(set.contains(c))
+                        return false;
+                    set.add(c);
+                }
+                return true;
             }
         },
         SIMPLE_V2 {
