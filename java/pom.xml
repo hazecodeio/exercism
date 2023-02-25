@@ -76,7 +76,7 @@
         <spring.version>5.3.16</spring.version>
         <spring.ws.version></spring.ws.version>
         <spring.integration.version></spring.integration.version>
-        <hibernate.version>5.4.20.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
     </properties>
 
     <dependencies>
