@@ -1,0 +1,97 @@
+:toc:
+:toclevels: 3
+:sectnums: 3
+:sectnumlevels: 3
+:icons: font
+:source-highlighter: rouge
+:hardbreaks-option:
+
+:experimental:
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:!toc-title:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+//:note-caption: :paperclip:
+:note-caption: :information_source:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+
+= Some Title
+Haze Wylde
+
+
+== Admonitions
+
+.List of Admonitions
+====
+TIP:        This is TIP.
+
+NOTE:       This is NOTE.
+
+IMPORTANT:  This is IMPORTANT.
+
+WARNING:    This is WARNING.
+
+CAUTION:    This is CAUTION.
+
+====
+
+[IMPORTANT]
+====
+.Title1
+texts. +
+text on a new line.
+
+.Title1
+* [x] dfd
+** df
+====
+
+.Example of Collapsible & Interactive Checkboxes
+[%collapsible]
+====
+[%interactive]
+*   [x] Rule 1
+**  [ ] Rule 1.1
+*** [ ] Rule 1.1.1
+====
+
+
+== Icons - (enable experimental property)
+
+.Keyboard Icons
+- Shortcut kbd:[Ctrl+\]]
+
+.Buttons
+- Press btn:[OK]
+- Press the btn:[OK] button when you are finished.
+
+To save the file, select menu:File[Save].
+
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+
+== Referencing/Linking Files
+
+link:file:///path-to-file[reference to file]
+
+
+
+****
+This is a sidebar with two options assigned to it, named option1 and option2.
+****
+
+
+.Method: `.` Connected Followed by `%`
+[horizontal.properties%step]
+property 1:: does stuff
+property 2:: does different stuff
+{empty}
+
+
+.Method: `,` Separated
+[horizontal,role=properties,opts=step]
+property 1:: does stuff
+property 2:: does different stuff

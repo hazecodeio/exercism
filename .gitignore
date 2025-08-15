@@ -2,6 +2,8 @@
 **/*.iml
 **/target
 
+**/_env-*.properties
+
 # Compiled class file
 *.class
 
